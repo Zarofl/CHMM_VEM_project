@@ -1,0 +1,16 @@
+1. Data file is given in .csv format
+   Use "Data set up" to read and reformat the "data.csv". The codes are specific for this file.
+
+2. Forward-backward functions should be run separately
+3. Initial parameters setting can be done in several ways: 
+                             a) Initial setup 1
+                             b) Initial setup 2
+                             c) Custom defined initial parameters
+
+4. CHMM VEM: includes main VEM algorithm based on Forward-backward functions 
+                       and the selected initial paramaters settings
+5. CHMM VEM can be implemented for Geometric or Binomial Copula. Mainly the codes are written for Binomial Copula
+6. For now, CHMM VEM works for Poisson distribution.
+
+7. Outputs are estimated parameters of the model, error values
+    
