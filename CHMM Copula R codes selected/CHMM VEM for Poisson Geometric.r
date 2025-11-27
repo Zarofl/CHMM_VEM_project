@@ -70,8 +70,8 @@ CHMM_VEM <- function(X, nb.states,
       } 
       
       emisPr.list[[dis]] <- emisPr 
-      emisPrW <- emisPr*prodcopula[dis]       #here variational coefficient is calculated, in our case Copula*Emission prob, formulas in the last report are changed (i will add it later)
-      emisPrW.list[[dis]] <- emisPrW           #here we have h_it for each disease and state
+      emisPrW <- emisPr*prodcopula[dis]       #here variational coefficient is calculated
+      emisPrW.list[[dis]] <- emisPrW          #here we have h_it for each disease and state
       
       
       # initPr are also affected by h_it
@@ -99,8 +99,7 @@ CHMM_VEM <- function(X, nb.states,
       
       
       lpostPr.tmp <- resB$lpostPr
-      #lpostPr.tmp <- apply(lpostPr.tmp, 2, pmax, -100)      #when we do this approach suggested by the authors of CHMM VEM, the model performs very poor
-      
+      #lpostPr.tmp <- apply(lpostPr.tmp, 2, pmax, -100)      
       for (t in 1:nbT){
         a1<-exp(mpfr(lpostPr.tmp[t,],5))
         a1<-asNumeric(a1)
@@ -184,7 +183,7 @@ CHMM_VEM <- function(X, nb.states,
     #esLambda<- esLambda[,ordLambda]
     #transPr <- transPr[ordLambda,ordLambda]
     
-    ## Calculate criteria    RSS     -------------------------- I will update it 
+    ## Calculate criteria    RSS  
     
     for (dis in 1:nbD) {
       for (dis2 in c(1:nbD)[-dis]){
