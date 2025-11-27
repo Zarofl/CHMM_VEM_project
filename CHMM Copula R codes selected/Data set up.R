@@ -8,6 +8,9 @@ summary(Y)
 
 NR<-nrow(Y)
 NC<-ncol(Y)
+
+#This matrix is suitable for the dataset to keep outliers 
+#It's adviced to keep the values between 0-100. 
 Y2<-matrix(NA,NR,NC)
 for (j in 2:NC){
   for (i in 2:NR){
