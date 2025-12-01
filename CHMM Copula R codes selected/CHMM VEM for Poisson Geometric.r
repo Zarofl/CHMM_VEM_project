@@ -70,8 +70,13 @@ CHMM_VEM <- function(X, nb.states,
       } 
       
       emisPr.list[[dis]] <- emisPr 
+
       emisPrW <- emisPr*prodcopula[dis]      
       emisPrW.list[[dis]] <- emisPrW          
+
+      emisPrW <- emisPr*prodcopula[dis]       #here variational coefficient is calculated
+      emisPrW.list[[dis]] <- emisPrW          #here we have h_it for each disease and state
+
       
       # initPr are also affected by h_it
       initTmp <- initPr * emisPrW[1,]  
@@ -99,7 +104,6 @@ CHMM_VEM <- function(X, nb.states,
       
       lpostPr.tmp <- resB$lpostPr
       #lpostPr.tmp <- apply(lpostPr.tmp, 2, pmax, -100)      
-      
       for (t in 1:nbT){
         a1<-exp(mpfr(lpostPr.tmp[t,],5))
         a1<-asNumeric(a1)
@@ -181,9 +185,9 @@ CHMM_VEM <- function(X, nb.states,
     #ordLambda <- order(colSums(esLambda))
     #ordLambda <- order(esLambda[1,])
     #esLambda<- esLambda[,ordLambda]
-    #transPr <- transPr[ordLambda,ordLambda]
+    #transPr <- transPr[ordLambda,ordLambda]x
     
-    ## Calculate criteria    RSS     -------------------------- I will update it 
+    ## Calculate criteria    RSS  
     
     for (dis in 1:nbD) {
       for (dis2 in c(1:nbD)[-dis]){

@@ -1,5 +1,3 @@
-#############################################################################################
-##########------this code reads real data and ready to use for model-------------------------------
 
 ###---Data
 Y<-read.csv("D://Copula - QU R code/CHMM_VEM_project/CHMM Copula R codes selected/data.csv",header=T,sep=",")
@@ -10,7 +8,7 @@ NR<-nrow(Y)
 NC<-ncol(Y)
 
 #This matrix is suitable for the dataset to keep outliers 
-#It's adviced to keep the values between 0-100. 
+#It's advised to keep the values between 0-100 to avoid possible numerical underflow caused by EM and calculations of posterior probabilities. 
 Y2<-matrix(NA,NR,NC)
 for (j in 2:NC){
   for (i in 2:NR){
