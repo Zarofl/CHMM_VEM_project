@@ -1,5 +1,5 @@
 #############################################################################################
-##########------Hocam this code reads real data and ready to use for model-------------------------------
+##########------this code reads real data and ready to use for model-------------------------------
 
 ###---Data
 Y<-read.csv("D://Copula - QU R code/CHMM_VEM_project/CHMM Copula R codes selected/data.csv",header=T,sep=",")
