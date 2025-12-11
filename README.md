@@ -5,7 +5,7 @@ The model incorporates copula functions to capture dependence between multiple d
 
 Please use the appropriate citatation for the Copula CHMM model: 
 
-Oflaz Z, Yozgatligil C, Selcuk-Kestel AS. Modeling comorbidity of chronic diseases using coupled hidden Markov model with bivariate discrete copula. Statistical Methods in Medical Research. 2023;32(4):829-849. doi:10.1177/09622802231155100
+**Oflaz Z, Yozgatligil C, Selcuk-Kestel AS. Modeling comorbidity of chronic diseases using coupled hidden Markov model with bivariate discrete copula. Statistical Methods in Medical Research. 2023;32(4):829-849. doi:10.1177/09622802231155100**
   
 
 ---
